@@ -1,0 +1,364 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Invoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style type="text/css">
+        * {
+            font-size: 65%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat';
+        }
+
+        body {
+            margin: 0;
+            background-color: #cccccc;
+            font-family: 'Montserrat';
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background: #E5E5E5;
+        }
+
+        .main {
+            background-color: #FBFCFE;
+            margin: 0 auto;
+            max-width: 137rem;
+            border-spacing: 0;
+            font-family: "Montserrat";
+            color: #4a4a68;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .two-column {
+            text-align: center;
+        }
+
+        .two-column .column {
+            width: 100%;
+            max-width: 30rem;
+            display: inline;
+            vertical-align: top;
+            text-align: justify;
+        }
+
+        .row1,
+        .row2,
+        .row3 {
+            display: inline;
+            table-layout: fixed;
+        }
+
+
+        button {
+            box-sizing: border-box;
+            width: 24rem;
+            height: 6rem;
+            background: #1F68D6;
+            border: 1px solid #1F68D6;
+            border-radius: 1rem;
+            color: #FBFCFE;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+
+        }
+
+        button:hover {
+            transform: translateX(2px) translateY(2px);
+            cursor: pointer;
+        }
+
+        @media (max-width:834px) {
+
+            .wrapper,
+            .main {
+                width: 83rem;
+            }
+
+            .footerDiv {
+                padding: 0 5rem;
+                width: 266px;
+            }
+
+            button {
+                max-width: 17rem;
+            }
+        }
+
+        @media (max-width:390px) {
+
+            .wrapper,
+            .main {
+                width: 39rem;
+            }
+
+            button {
+                width: 17rem;
+            }
+
+            .btnClass {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .footerDiv {
+                padding: 0 5rem;
+                width: 266px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <!--logohead-->
+            <tr>
+                <td style="background-color: #1f68d6">
+                    <table width="100%">
+                        <tr>
+                            <td
+                                style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 0 15px; height: 37rem;">
+                                <p style="height: 70px; margin-top: 1rem; margin-bottom: 8rem;">
+                                    <a href="https://imgbb.com/"><img
+                                            src="https://i.ibb.co/k1DGbjv/Mima-light-logo-1-1.png"
+                                            alt="Mima-light-logo-1-1" border="0" /></a>
+                                </p>
+                                <p
+                                    style="display: flex; justify-content: center; width: 7.5rem; height: 6.6rem; border-style: solid; border-color: #FBFCFE; border-width: 2rem 1rem 1rem 1rem;  border-radius: 1rem; align-items: center; margin-bottom: 3.6rem;">
+                                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/TwsB3jt/Vector-2.png"
+                                            alt="Vector-2" border="0" /></a>
+                                </p>
+                                <p style="color: #ffffff; font-size: 32px">Due invoice - {{customer}}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!--bodymsg-->
+            <tr>
+                <td>
+                    <table class="middle" style="height: 20rem; margin-inline: 9rem; margin-bottom: 3rem;">
+                        <tr>
+                            <td>
+                                <p
+                                    style=" font-weight: 700; font-size: 1.8rem; color: #4A4A68; margin-bottom: 1.5rem; margin-top: 3rem;">
+                                    Hello {{customer}},</p>
+                                <p class="middleText"
+                                    style=" font-weight: 400; font-size: 1.8rem; line-height: 2rem;margin-bottom: 3.6rem;">
+                                    Your invoice #INV001 is due for payment. kindly make payment for this invoice using
+                                    the payment options in the invoice below.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!--parties-->
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr
+                            style=" display: flex; justify-content: space-between; gap: 10rem; margin: 0 9rem; border-bottom: 1px solid #4A4A68; border-top: 1px solid #4A4A68;">
+                            <td style="display: flex; flex-direction:column; margin: 4rem 3rem; line-height: 22px; font-size: 18px;">
+                                <p style="display: flex; height: 5rem; "><img src="/img/Vector (15).png" alt="invoice logo" height="30rem;" style="padding: 5px;"/>Invoice sent To</p>
+                                <p style="font-weight: 700; font-size: 22px">Sarah white Enterprise </p>
+                                <p>Ugbomoro warri Delta state</p>
+                                <p>2234705873034</p>
+                                <p style="color: #1F68D6;">Sarahenterpricea@gmail.com</p>
+                            </td>
+
+                            <td style="display: flex; flex-direction:column; margin: 4rem 3rem; line-height: 22px;">
+                                <p style="display: flex; align-items: center; height: 5rem;"> <img  src="/img/Vector(16).png" alt="home logo" height="30rem;" style="padding: 5px;"/>Invoice sent From</p>
+                                <p style="font-weight: 700; font-size: 22px">Lade EssenceEnterprise</p>
+                                <p>Ugbomoro warri Delta state</p>
+                                <p>2234705873034</p>
+                                <p style="color: #1F68D6;">Sarahenterpricea@gmail.com</p>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem;">
+                            <td style="margin: 4rem 3rem;">
+                                <p>Invoice No.</p>
+                                <p style="font-weight: 600; line-height: 29px; font-size: 24px; margin-top: 15px;">#INVOO1</p>
+                            </td>
+                            <td style="margin: 4rem 3rem;">
+                                <p>Invoice Date.</p>
+                                <p style="font-weight: 600; line-height: 29px; font-size: 24px; margin-top: 15px;">05/06/2020</p>
+                            </td>
+                            <td style="margin: 4rem 3rem;">
+                                <p>Invoice Total.</p>
+                                <p style="font-weight: 600; line-height: 29px; font-size: 24px; margin-top: 15px;">400</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem;font-size: 24px; line-height: 29px; height: 129px; background: #1F68D6; align-items: center; color: #FBFCFE; font-weight: 700;
+                        ">
+                            <td style=" border: solid 2px #4A4A68; line-height: 129px; height: 129px; width: 25%">
+                                Service</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 129px; height: 129px; width: 25%">
+                                Quantity</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 129px; height: 129px; width: 25%">Amount
+                            </td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 129px; height: 129px; width: 25%">Total
+                            </td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px; color: #4A4A68; line-height: 20px; align-items: center;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 25%">
+                                Ironing</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 25%">4x
+                            </td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 25%">400
+                            </td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 25%">400
+                            </td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">Sub
+                                Total</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%"></td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">
+                                Discount</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%"></td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">
+                                Shipping</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%"></td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">VAT
+                            </td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%"></td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">WHT
+                            </td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%"></td>
+                        </tr>
+                        <tr align="center" style="display: flex; justify-content:space-between; margin: 0 9rem; font-size: 24px; height: 120px;
+                        line-height: 20px; align-items: center; margin-left: 50%;">
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">Grand
+                                Total</td>
+                            <td style=" border: solid 2px #4A4A68; line-height: 120px; height: 120px; width: 50%">400
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td style="display: flex; flex-direction: column; margin: 4rem 9rem; font-size: 18px; line-height: 22px;">
+                                <p style="color: #1F68D6; font-weight: 600; margin-block: 21px;">Payment Method:</p>
+                                <p>Bank : <span style="font-weight: 700; font-size: 18px;">kuda Bank</span></p>
+                                <p>Account Name : <span style="font-weight: 700; font-size: 18px;">Lade Essence Enterprise</span></p>
+                                <p>Account Number :<span style="font-weight: 700; font-size: 18px;">22044578978</span></p>
+                                <p>Transfer Narration : <span style="font-weight: 700; font-size: 18px;">INV-0001123</span></p>
+                                <p style="margin-top: 7rem;"><span style="font-weight: 700; font-size: 18px;">Note:</span></p>
+                                <p>Please add INV-000001 IN your narration when making payment via transfer</p>
+
+                                <p
+                                    style=" font-weight: 400; font-size: 1.8rem; line-height: 2.2rem; color: #4A4A68; line-height: 35px; margin-top: 50px;">
+                                    Regards,</p>
+                                <p style=" font-weight: 400; font-size: 1.8rem; line-height: 2.2rem; color: #4A4A68;">
+                                    Mima Business Team</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <!--footer-->
+            <tr>
+                <td style="background-color: #ccedff; height: 25rem;">
+                    <table class="footer" width="100%" align="center">
+                        <tr>
+                            <td align="center" class="footerDiv">
+                                <div style=" display: flex; gap: 3rem; justify-content: center; padding-bottom: 2rem;">
+                                    <img src="/img/Vector (10).png" alt="facebook" width="20rem" height="20rem" />
+                                    <img src="/img/Vector (11).png" alt="twitter" width="20rem" height="20rem" />
+                                    <img src="/img/Vector (12).png" alt="instagram" width="20rem" height="20rem" />
+                                </div>
+                                <p style="font-weight: 700; font-size: 1.4rem; line-height: 1.7rem; color: #4A4A68; ">
+                                    The Mima Business Team</p>
+                                <p
+                                    style="font-weight: 700; font-size: 1.4rem; line-height: 1.7rem; color: #4A4A68; margin-bottom: 15px;">
+                                    33
+                                    TE Williams Street, Kfarm Estate, Ojodu, Lagos Nigeria</p>
+                                <p class="footerp"
+                                    style="font-weight: 400; font-size: 14px; text-align: center; line-height: 17px; width: 50rem;">
+                                    You are receiving this email because you signed up on Mima
+                                    Business. If you would like to stop receiving this message
+                                    from us, you can opt out by clicking
+                                    <a class="link" href="{{{unsubscribe}}}"
+                                        style="font-weight: 700; color: #1f68d6; font-size: 1.5rem;">unsubscribe</a>.
+                                    For
+                                    more information about how we process data, please
+                                    see our
+                                    <a class="link" href="#"
+                                        style="font-weight: 700; color: #1f68d6; font-size: 1.5rem; padding-bottom: 4rem;">Privacy
+                                        Policy</a>.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
